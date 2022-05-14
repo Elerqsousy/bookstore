@@ -1,17 +1,280 @@
 body {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  padding: 24px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ecebeb;
+  font-family: Helvetica, 'Courier New', Courier, monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: unset;
+}
+
+.left-nav {
+  display: flex;
+}
+
+.left-nav h1 {
+  margin: auto;
+  color: #3584fb;
+}
+
+.left-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.left-nav li {
+  padding-left: 35px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.left-nav a {
+  text-decoration: unset;
+  color: #bfbfbf;
+}
+
+.left-nav .active {
+  color: rgb(114, 113, 113);
+}
+
+.books-container {
+  height: 100vh;
+  background: #f9f8fb;
+  padding: 20px 4rem;
+}
+
+.book-card {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+.card-right-side {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.current-chap {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #c7c4c4;
+  margin-bottom: 3px;
+}
+
+.chap-num {
+  font-size: 15px;
+  margin-bottom: 17px;
+  font-weight: 300;
+}
+
+.card-left-side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.book h2 {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.category {
+  color: rgb(161, 160, 160);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #9090ff;
+}
+
+.book button {
+  color: #9090ff;
+  background: white;
+  border: unset;
+  padding: 0;
+  font-size: 12px;
+}
+
+.percentage .bar {
+  min-width: 64px;
+  min-height: 64px;
+  max-width: 64px;
+  max-height: 64px;
+  margin-right: 15px;
+}
+
+.percentage {
+  display: flex;
+  align-items: center;
+  min-width: 170px;
+  max-width: 40%;
+  height: 90px;
+}
+
+.vertical-border {
+  background-color: rgb(235, 235, 235);
+  min-width: 1px;
+  height: 55px;
+  margin-left: 20%;
+}
+
+.percentage-details p {
+  font-size: 25px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.percentage-details span {
+  color: #a09e9e;
+  font-size: 12px;
+}
+
+.percentage-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-book-section button {
+  height: 30px;
+  width: 15%;
+}
+
+.btn-collection button {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #9090ff;
+  height: 20px;
+  border: none;
+  background: unset;
+  padding: 0 15px;
+  border-right: 2px solid #f4f4f4;
+}
+
+.btn-collection button:first-child {
+  padding-left: 0 !important;
+}
+
+.btn-collection button:last-child {
+  border: unset;
+}
+
+.primary-btn {
+  text-transform: uppercase;
+  background: #0290ff;
+  font-size: 11px;
+  border: 0;
+  border-radius: 3px;
+  color: #fafcff;
+  font-weight: 600;
+  padding: 7px 25px;
+}
+
+.primary-btn:hover {
+  background: #53b4ff;
+}
+
+.primary-btn:active {
+  background: #0172c9;
+}
+
+.primary-btn:disabled,
+.primary-btn:disabled:hover,
+.primary-btn:disabled:active {
+  color: #c1e4ff;
+  font-weight: 400;
+}
+
+.book-cards-container {
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.add-book-section h3 {
+  color: #888;
+  font-size: 18px;
+  margin: 15px 0 20px;
+}
+
+.add-book-section form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-book-section input,
+.add-book-section select {
+  padding: 4px 10px;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 3px;
+  width: 25%;
+  background: white;
+  color: gray;
+}
+
+.add-book-section select {
+  width: 20%;
+}
+
+@media only screen and (max-width: 900px) {
+  .add-book-section button {
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .card-right-side {
+    margin-right: 3vw;
+  }
+
+  .percentage .percentage-details {
+    margin-right: 4vw;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .card-right-side {
+    margin-right: 5vw;
+  }
+
+  .percentage .percentage-details {
+    margin-right: 5vw;
+  }
 }
