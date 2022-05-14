@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Book from './Book';
-import { bookRemoved } from '../redux/booksSlice';
+import api from '../redux/axiosConfig';
 
 const BookCard = (props) => {
   const {
@@ -10,8 +10,10 @@ const BookCard = (props) => {
   } = props;
 
   const dispatch = useDispatch();
-  const hanldeRemoveBook = (id) => {
-    dispatch(bookRemoved(id));
+
+  const hanldeRemoveBook = async (id) => {
+    await dispatch(api.fetchDeleteBook(id));
+    dispatch(api.fetchBooks());
   };
 
   return (

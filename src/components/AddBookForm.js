@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { bookAdded } from '../redux/booksSlice';
+import api from '../redux/axiosConfig';
 
 const AddBookForm = () => {
   const dispatch = useDispatch();
@@ -15,9 +15,10 @@ const AddBookForm = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(bookAdded(data));
+    await dispatch(api.fetchAddBook(data));
+    dispatch(api.fetchBooks());
   };
   return (
     <form onSubmit={(e) => { handleSubmit(e); }}>
