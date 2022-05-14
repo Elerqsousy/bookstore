@@ -17,6 +17,7 @@ const AddBookForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.target.reset();
     await dispatch(api.fetchAddBook(data));
     dispatch(api.fetchBooks());
   };
