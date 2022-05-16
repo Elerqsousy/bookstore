@@ -22,11 +22,17 @@ const AddBookForm = () => {
     dispatch(api.fetchBooks());
   };
   return (
-    <form onSubmit={(e) => { handleSubmit(e); }}>
-      <input name="title" placeholder="Book title" type="text" onChange={(e) => handleOnChange(e)} />
-      <input name="author" placeholder="Author" type="text" onChange={(e) => handleOnChange(e)} />
-      <button type="submit">ADD BOOK</button>
-    </form>
+    <section className="add-book-section">
+      <h3>ADD NEW BOOK</h3>
+      <form onSubmit={(e) => { handleSubmit(e); }}>
+        <input name="title" placeholder="Book title" type="text" onChange={(e) => handleOnChange(e)} />
+        <input name="author" placeholder="Author" type="text" onChange={(e) => handleOnChange(e)} />
+        <select name="category" placeholder="Category" text="Category">
+          <option value="economy">Economy</option>
+        </select>
+        <button type="submit" className="primary-btn">ADD BOOK</button>
+      </form>
+    </section>
   );
 };
 export default AddBookForm;

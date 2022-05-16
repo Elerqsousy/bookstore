@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 const Book = (props) => {
   const { category, title, author } = props;
   return (
-    <div>
-      <span>{category}</span>
+    <div className="book">
+      <span className="category">{category}</span>
       <h2>{title}</h2>
-      <span>{author}</span>
+      <span className="author">{author}</span>
     </div>
 
   );
